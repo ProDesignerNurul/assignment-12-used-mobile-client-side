@@ -1,10 +1,17 @@
 import React from 'react';
+import Category from '../Category/Category';
 import HeroArea from '../HeroArea/HeroArea';
 
 const Home = () => {
     return (
         <div>
-            <HeroArea></HeroArea>
+            <div>
+
+            </div>
+            <div>
+                <HeroArea></HeroArea>
+                <Category></Category>
+            </div>
         </div>
     );
 };
