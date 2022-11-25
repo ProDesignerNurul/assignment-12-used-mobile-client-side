@@ -1,7 +1,6 @@
 import React from 'react';
 
 const UsedMobilesDetails = ({mobile, setTreatment}) => {
-    console.log(mobile)
     const {name, location, mobileImg, originalPrice, publishDate, resalePrice, yearsOfUsed, information} = mobile;
     return (
         <div className='p-5 rounded-lg border border-red-400'>

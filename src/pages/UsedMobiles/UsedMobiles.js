@@ -28,6 +28,7 @@ const UsedMobiles = () => {
                     treatment &&
                     <BookingModal
                         treatment={treatment}
+                        setTreatment={setTreatment}
                     ></BookingModal>}
             </div>
         </section>
