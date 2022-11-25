@@ -1,4 +1,5 @@
 import React from 'react';
+import UsedMobiles from '../../UsedMobiles/UsedMobiles';
 import Category from '../Category/Category';
 import HeroArea from '../HeroArea/HeroArea';
 
@@ -11,6 +12,7 @@ const Home = () => {
             <div>
                 <HeroArea></HeroArea>
                 <Category></Category>
+                <UsedMobiles></UsedMobiles>
             </div>
         </div>
     );

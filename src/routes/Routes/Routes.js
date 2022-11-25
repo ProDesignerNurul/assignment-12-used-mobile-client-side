@@ -26,6 +26,10 @@ const router = createBrowserRouter([
                 element: <About></About>
             }
         ]
+    },
+    {
+        path: '*',
+        element: <div className="text-4xl text-center mt-40 "> <span className="text-red-500 font-bold text-6xl">404</span> Page Not Found, Please Provide A <span className="text-red-500 font-semibold">Valid</span> URL and Then Try Again!!</div>
     }
 ]);
 
