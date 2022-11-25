@@ -1,17 +1,34 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../context/AuthProvider';
 
 const SignUp = () => {
 
-    const { register, handleSubmit } = useForm();
-    const [data, setData] = useState('');
+    const { register, formState: { errors }, handleSubmit } = useForm();
+    const {createUser, updateUser} = useContext(AuthContext);
+
+    const handleSignUp = data => {
+        console.log(data);
+        createUser( data.email, data.password )
+            .then( result => {
+                const user = result.user;
+                console.log(user);
+                const userInfo = {
+                    displayName: data.name
+                }
+                updateUser(userInfo)
+                .then( () => {})
+                .catch( err => console.error(err))
+            })
+            .catch( err => console.error( err ))
+    }
 
     return (
         <div className='flex justify-center items-center w-96 mx-auto'>
             <div className='w-96 p-5'>
                 <h2 className='text-3xl text-center'>Sign Up</h2>
-                <form onSubmit={handleSubmit((data) => setData(JSON.stringify(data)))}>
+                <form onSubmit={handleSubmit(handleSignUp)}>
 
 
 
@@ -20,20 +37,23 @@ const SignUp = () => {
                             <span className="label-text font-semibold">Your Name</span>
                         </label>
                         <input type="text" {...register("name")} className="input input-bordered w-full " placeholder="Enter Name" />
+                        
 
                     </div>
                     <div className="form-control w-full ">
                         <label className="label">
                             <span className="label-text font-semibold">Your Email</span>
                         </label>
-                        <input type="email" {...register("email")} className="input input-bordered w-full " placeholder="Enter Email" />
+                        <input type="email" {...register("email", { required: "Email Address is required" })} className="input input-bordered w-full " placeholder="Enter Email" />
+                        {errors.email && <p className='text-red-500' role="alert">{errors.email?.message}</p>}
 
                     </div>
                     <div className="form-control w-full ">
                         <label className="label">
                             <span className="label-text font-semibold">Your Password</span>
                         </label>
-                        <input type="password" {...register("password")} className="input input-bordered w-full " placeholder="Enter Password" />
+                        <input type="password" {...register("password", { required: "Password Address is required" })} className="input input-bordered w-full " placeholder="Enter Password" />
+                        {errors.password && <p className='text-red-500' role="alert">{errors.password?.message}</p>}
                         <label className="label">
                             <span className="label-text font-semibold">Forget Password?</span>
                         </label>
