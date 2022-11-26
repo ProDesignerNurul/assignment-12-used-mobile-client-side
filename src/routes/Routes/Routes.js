@@ -7,6 +7,7 @@ import MyDashboard from '../../layouts/MyDashboard/MyDashboard';
 import Login from "../../loginProccess/Login/Login";
 import SignUp from "../../loginProccess/SignUp/SignUp";
 import About from "../../pages/About/About";
+import Article from '../../pages/Article/Article';
 import Category from "../../pages/home/Category/Category";
 import Home from "../../pages/home/Home/Home";
 import PrivateRoute from './PrivateRoute/PrivateRoute';
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
             {
                 path: '/home',
                 element: <Home></Home>
+            },
+            {
+                path: '/article',
+                element: <Article></Article>
             },
             {
                 path: '/category/:id',
