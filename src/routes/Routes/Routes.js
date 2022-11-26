@@ -7,6 +7,7 @@ import SignUp from "../../loginProccess/SignUp/SignUp";
 import About from "../../pages/About/About";
 import Category from "../../pages/home/Category/Category";
 import Home from "../../pages/home/Home/Home";
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
     {
@@ -41,9 +42,12 @@ const router = createBrowserRouter([
     },
     {
         path: '/dashboard',
-        element: <DashBoard></DashBoard>
+        element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>
     },
-    
+    {
+        path: '*',
+        element: <div className='text-center mt-20'> <span className='text-6xl text-red-500'>404</span> page not found, please enter valid URL </div>
+    }
 ]);
 
 export default router;
