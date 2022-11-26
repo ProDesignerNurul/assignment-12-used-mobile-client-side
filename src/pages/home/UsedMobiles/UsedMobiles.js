@@ -3,16 +3,33 @@ import React, { useEffect, useState } from 'react';
 // import UsedMobilesDetails from './UsedMobilesDetails';
 import UsedMobilesDetails from '../UsedMobiles/UsedMobilesDetails';
 import BookingModal from '../../BookingModal/BookingModal';
+import { useQuery } from '@tanstack/react-query';
+import Loading from '../../../share/Loading/Loading';
 
 const UsedMobiles = () => {
-    const [usedMobiles, setUsedMobiles] = useState([]);
+    // const [usedMobiles, setUsedMobiles] = useState([]);
     const [treatment, setTreatment] = useState(null);
 
-    useEffect(() => {
-        fetch(`usedMobiles.json`)
-            .then(res => res.json())
-            .then(data => setUsedMobiles(data))
-    }, [])
+    const {data: usedMobiles = [], isLoading} = useQuery({
+        queryKey: ['usedMobiles'],
+        queryFn: async () => {
+            const res = await fetch(`http://localhost:5000/allItems`);
+            const data = await res.json();
+            return data;
+        }
+            
+        });
+
+
+        if(isLoading) {
+            return <Loading></Loading>
+        }
+
+    // useEffect(() => {
+    //     fetch(`http://localhost:5000/allItems`)
+    //         .then(res => res.json())
+    //         .then(data => setUsedMobiles(data))
+    // }, [])
 
     return (
         <section>
