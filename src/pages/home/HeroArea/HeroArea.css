@@ -22,11 +22,36 @@
     animation: animate 4s linear infinite;
 }
 
-@keyframes animate {
-    0%, 10%, 100% {
-        width: 0;
+@media screen and (min-width: 600px) {
+    @keyframes animate {
+        0%, 10%, 100% {
+            width: 0;
+        }
+        70%, 90% {
+            width: 38%;
+        }
     }
-    70%, 90% {
-        width: 80%;
+    
+}
+@media screen and (max-width: 599px) {
+    @keyframes animate {
+        0%, 10%, 100% {
+            width: 0;
+        }
+        70%, 90% {
+            width: 42%;
+        }
     }
+    
+}
+@media screen and (min-width: 1024px) {
+    @keyframes animate {
+        0%, 10%, 100% {
+            width: 0;
+        }
+        70%, 90% {
+            width: 78%;
+        }
+    }
+    
 }

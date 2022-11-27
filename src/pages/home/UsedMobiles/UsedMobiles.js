@@ -33,7 +33,7 @@ const UsedMobiles = () => {
 
     return (
         <section>
-            <div className='grid lg:grid-cols-3 gap-7 mt-20'>
+            <div className='grid lg:grid-cols-3 gap-7 mt-20 p-5'>
                 {
                     usedMobiles?.map(mobile => <UsedMobilesDetails
                         key={mobile._id}
