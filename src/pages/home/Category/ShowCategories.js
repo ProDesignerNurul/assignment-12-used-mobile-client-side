@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ShowCategories = ({ category }) => {
-    console.log(category)
 
     const { _id, name, mobileImg, totalMobile } = category;
 
