@@ -10,6 +10,7 @@ import About from "../../pages/About/About";
 import Article from '../../pages/Article/Article';
 import Category from "../../pages/home/Category/Category";
 import Home from "../../pages/home/Home/Home";
+import UsedMobiles from '../../pages/home/UsedMobiles/UsedMobiles';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
             {
                 path: '/category/:id',
                 element: <Category></Category>
+            },
+            {
+                path: '/usedMobiles',
+                element: <UsedMobiles></UsedMobiles>
             },
             {
                 path: '/login',
