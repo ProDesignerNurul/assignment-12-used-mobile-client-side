@@ -8,6 +8,7 @@ import Login from "../../loginProccess/Login/Login";
 import SignUp from "../../loginProccess/SignUp/SignUp";
 import About from "../../pages/About/About";
 import Article from '../../pages/Article/Article';
+import ForOfor from '../../pages/ForOfor/ForOfor';
 import Category from "../../pages/home/Category/Category";
 import Home from "../../pages/home/Home/Home";
 import UsedMobiles from '../../pages/home/UsedMobiles/UsedMobiles';
@@ -64,7 +65,7 @@ const router = createBrowserRouter([
     },
     {
         path: '*',
-        element: <div className='text-center mt-20'> <span className='text-6xl text-red-500'>404</span> page not found, please enter valid URL </div>
+        element: <ForOfor></ForOfor>
     }
 ]);
 
