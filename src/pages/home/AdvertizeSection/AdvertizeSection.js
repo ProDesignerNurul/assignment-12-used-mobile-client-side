@@ -24,7 +24,7 @@ const AdvertizeSection = () => {
                 </div>
             </div> */}
 
-            <div className='flex p-5 mt-10 shadow-lg rounded-lg'>
+            <div className='lg:flex p-5 m-5 mt-10 shadow-lg rounded-lg'>
                 <div className='flex items-center p-5 lg:w-1/2'>
                     <img className='w-36 mr-5' src={AddImg1} alt="" />
                     <div>
@@ -44,9 +44,9 @@ const AdvertizeSection = () => {
                 </div>
             </div>
 
-            <div className='flex justify-center p-5 mt-10 shadow-2xl rounded-lg'>
+            <div className='flex justify-center p-5 mt-10 m-5 shadow-2xl rounded-lg'>
 
-            <div className='flex items-center p-5'>
+            <div className='lg:flex items-center p-5 '>
                     <img className='w-44 mr-5' src={BuyingImg} alt="" />
                     <div>
                         <h2 className='text-3xl font-semibold'>Buy Any Used Mobile/Tablets Very Lowest Prices </h2>

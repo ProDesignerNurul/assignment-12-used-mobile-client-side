@@ -67,16 +67,7 @@ const BookingModal = ({ treatment, setTreatment }) => {
                         <input name="phone" type="text" defaultValue={user?.phone} placeholder='Your Phone' className="input input-bordered input-secondary w-full mt-3 " />
                         <input className='btn btn-outline w-full mt-3' type="submit" value="Book Now" />
                     </form>
-                    {/* <p className="py-4">{information}</p>
-                    <p>{location}</p>
-                    <p>{originalPrice}</p>
-                    <p>{resalePrice}</p>
-                    <p>{publishDate}</p>
-                    <p>{yearsOfUsed}</p>
-                    <label
-                        className='btn btn-outline w-full mt-3'
-                        htmlFor="booking-modal"
-                    >Book Now</label> */}
+                    
                 </div>
             </div>
         </div>

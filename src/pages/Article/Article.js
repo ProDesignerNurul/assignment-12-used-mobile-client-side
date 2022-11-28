@@ -2,7 +2,7 @@ import React from 'react';
 
 const Article = () => {
     return (
-        <div className='lg:w-1/2 mx-auto'>
+        <div className='lg:w-1/2 mx-auto p-5'>
             <div className='border border-red-500 p-5 rounded-lg mb-10'>
                 <h2 className="text-3xl font-semibold mb-5">What are the different ways to manage a state in a React application?</h2>
                 <p>In modern React, we build our applications with functional components. Components are themselves JavaScript functions, independent and reusable bits of code. <br /><br />
