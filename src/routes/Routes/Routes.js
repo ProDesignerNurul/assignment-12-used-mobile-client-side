@@ -14,6 +14,7 @@ import ForOfor from '../../pages/ForOfor/ForOfor';
 import Category from "../../pages/home/Category/Category";
 import Home from "../../pages/home/Home/Home";
 import UsedMobiles from '../../pages/home/UsedMobiles/UsedMobiles';
+import AdminRoute from './AdminRoute/AdminRoute';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
@@ -65,11 +66,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/allSellers',
-                element: <AllSellers></AllSellers>
+                element: <AdminRoute><AllSellers></AllSellers></AdminRoute>
             },
             {
                 path: '/dashboard/allBuyers',
-                element: <AllBuyers></AllBuyers>
+                element: <AdminRoute><AllBuyers></AllBuyers></AdminRoute>
             },
         ]
     },
