@@ -40,7 +40,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/usedMobiles',
-                element: <UsedMobiles></UsedMobiles>
+                element: <PrivateRoute><UsedMobiles></UsedMobiles></PrivateRoute>
             },
             {
                 path: '/login',

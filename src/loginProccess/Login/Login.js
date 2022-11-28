@@ -1,3 +1,4 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
@@ -7,27 +8,38 @@ import { AuthContext } from '../../context/AuthProvider';
 const Login = () => {
 
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const {signIn} = useContext(AuthContext);
+    const { signIn, providerLogin } = useContext(AuthContext);
     const [loginError, setLoginError] = useState('');
     const location = useLocation();
     const navigate = useNavigate();
 
     const from = location.state?.from?.pathname
 
+    const googleProvider = new GoogleAuthProvider()
+
+    const handleGoogleSignIn = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user)
+            })
+            .catch(error => console.error(error))
+    };
+
     const handleLogin = data => {
         console.log(data)
         setLoginError('');
         signIn(data.email, data.password)
-        .then( result => {
-            const user = result.user;
-            console.log(user);
-            toast.success('User Login Successfully')
-            navigate(from, {replace: true});
-        })
-        .catch( err => {
-            console.error( err )
-            setLoginError(err.message)
-        })
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                toast.success('User Login Successfully')
+                navigate(from, { replace: true });
+            })
+            .catch(err => {
+                console.error(err)
+                setLoginError(err.message)
+            })
     }
 
     return (
@@ -57,6 +69,17 @@ const Login = () => {
                         </label>
                     </div>
 
+                    <div className="form-control w-full border border-gray-400 rounded-md px-3 pb-1">
+                        <label className="label">
+                            <span className="label-text font-semibold">Select Buyer Or Saller</span>
+                        </label>
+                        <select {...register("category", { required: true })}>
+                            {/* <option value="">Select...</option> */}
+                            <option value="A" selected>Buyer</option>
+                            <option value="B">Saller</option>
+                        </select>
+                    </div>
+
 
 
                     {/* <p>{data}</p> */}
@@ -69,9 +92,9 @@ const Login = () => {
                 </form>
                 <p className='text-center mt-2'>If You Are New User, Please <Link className='text-primary' to="/signup">Register</Link></p>
 
-            <div className="divider">OR</div>
+                <div className="divider">OR</div>
 
-            <button className='btn btn-outline w-full'>Continue With Google</button>
+                <button onClick={handleGoogleSignIn} className='btn btn-outline w-full'>Continue With Google</button>
             </div>
 
         </div>
