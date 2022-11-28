@@ -26,7 +26,7 @@ const BookingModal = ({ treatment, setTreatment }) => {
             phone
         }
 
-        fetch(`http://localhost:5000/bookings`, {
+        fetch(`https://used-mobile-server-two.vercel.app/bookings`, {
             method: 'POST',
             headers: {
                 'content-type' : 'application/json'

@@ -1,4 +1,5 @@
 import React from 'react';
+import AdvertizeSection from '../AdvertizeSection/AdvertizeSection';
 
 import Category from '../Category/Category';
 import HeroArea from '../HeroArea/HeroArea';
@@ -13,8 +14,10 @@ const Home = () => {
             </div>
             <div>
                 <HeroArea></HeroArea>
+                <hr className='my-36' />
                 <Category></Category>
-                <UsedMobiles></UsedMobiles>
+                <hr className='my-36' />
+                <AdvertizeSection></AdvertizeSection>
             </div>
         </div>
     );

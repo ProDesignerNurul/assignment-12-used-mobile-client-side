@@ -6,7 +6,7 @@ const Category = () => {
     const [categories, setCategories] = useState([]);
 
     useEffect( () => {
-        fetch(`http://localhost:5000/mobileCategory`)
+        fetch(`https://used-mobile-server-two.vercel.app/mobileCategory`)
         .then( res => res.json())
         .then( data => setCategories(data))
         .catch( err => console.error(err));
