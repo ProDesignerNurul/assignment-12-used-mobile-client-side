@@ -1,5 +1,6 @@
 import React from 'react';
 import { createBrowserRouter } from "react-router-dom";
+import MyOrders from '../../buyerDashboard/MyOrders/MyOrders';
 import AllBuyers from '../../DashBoard/AllBuyers';
 import AllSellers from '../../DashBoard/AllSellers';
 import Dashborad from '../../DashBoard/Dashborad';
@@ -14,6 +15,9 @@ import ForOfor from '../../pages/ForOfor/ForOfor';
 import Category from "../../pages/home/Category/Category";
 import Home from "../../pages/home/Home/Home";
 import UsedMobiles from '../../pages/home/UsedMobiles/UsedMobiles';
+import AddAproduct from '../../sallerDashboard/AddAproduct/AddAproduct';
+import MyProducts from '../../sallerDashboard/MyProducts/MyProducts';
+import SallerRoute from '../SallerRoute/SallerRoute';
 import AdminRoute from './AdminRoute/AdminRoute';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 
@@ -71,6 +75,18 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/allBuyers',
                 element: <AdminRoute><AllBuyers></AllBuyers></AdminRoute>
+            },
+            {
+                path: '/dashboard/addAproduct',
+                element: <SallerRoute><AddAproduct></AddAproduct></SallerRoute>
+            },
+            {
+                path: '/dashboard/myProducts',
+                element: <SallerRoute><MyProducts></MyProducts></SallerRoute>
+            },
+            {
+                path: '/dashboard/myOrders',
+                element: <SallerRoute><MyOrders></MyOrders></SallerRoute>
             },
         ]
     },

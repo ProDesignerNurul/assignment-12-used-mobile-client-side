@@ -23,7 +23,7 @@ const AllSellers = () => {
     });
 
     const handleDeleteSeller = seller => {
-        fetch(`http://localhost:5000/users/${seller?._id}`, {
+        fetch(`https://used-mobile-server-two.vercel.app/users/${seller?._id}`, {
             method: 'DELETE',
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -60,7 +60,7 @@ const AllSellers = () => {
 
     return (
         <div>
-            <h2>all seller</h2>
+            <h2 className='text-center text-4xl font-semibold mb-3'>All <span className='text-lime-600'>Seller</span> Below</h2>
 
             <div className="overflow-x-auto">
                 <table className="table w-full">

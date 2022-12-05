@@ -69,16 +69,16 @@ const Login = () => {
                         </label>
                     </div>
 
-                    <div className="form-control w-full border border-gray-400 rounded-md px-3 pb-1">
+                    {/* <div className="form-control w-full border border-gray-400 rounded-md px-3 pb-1">
                         <label className="label">
                             <span className="label-text font-semibold">Select Buyer Or Saller</span>
                         </label>
                         <select {...register("category", { required: true })}>
-                            {/* <option value="">Select...</option> */}
+                            <option value="">Select...</option>
                             <option value="A" selected>Buyer</option>
                             <option value="B">Saller</option>
                         </select>
-                    </div>
+                    </div> */}
 
 
 

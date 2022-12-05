@@ -25,7 +25,7 @@ const SignUp = () => {
 
 
     const handleSignUp = data => {
-        console.log(data);
+        console.log(data.role);
         setSignUpError('');
         createUser(data.email, data.password)
             .then(result => {
@@ -37,7 +37,7 @@ const SignUp = () => {
                 }
                 updateUser(userInfo)
                     .then(() => {
-                        saveUser(data.name, data.email);
+                        saveUser(data.name, data.email, data.role);
                     })
                     .catch(err => console.error(err))
             })
@@ -48,8 +48,8 @@ const SignUp = () => {
     };
 
 
-    const saveUser = (name, email) => {
-        const user = { name, email };
+    const saveUser = (name, email, role) => {
+        const user = { name, email, role };
         fetch(`https://used-mobile-server-two.vercel.app/users`, {
             method: 'POST',
             headers: {
@@ -112,13 +112,13 @@ const SignUp = () => {
                     </div>
 
                     <div className="form-control w-full border border-gray-400 rounded-md px-3 pb-1">
-                        <label className="label">
+                        {/* <label className="label">
                             <span className="label-text font-semibold">Select Buyer Or Saller</span>
-                        </label>
-                        <select {...register("category", { required: true })}>
+                        </label> */}
+                        <select {...register("role", { required: true })}>
                             {/* <option value="">Select...</option> */}
-                            <option value="A" selected>Buyer</option>
-                            <option value="B">Saller</option>
+                            <option value="buyer" >Buyer</option>
+                            <option value="saller">Saller</option>
                         </select>
                     </div>
 
